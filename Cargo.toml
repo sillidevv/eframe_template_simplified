@@ -13,12 +13,14 @@ targets = ["x86_64-unknown-linux-gnu"]
 [dependencies]
 egui = "0.33.0"
 eframe = { version = "0.33.0", default-features = false, features = [
-	"accesskit",
-	"default_fonts",
-	"glow",
-	"persistence",
-	"wayland",
-	"x11",
+	# "accesskit",     # Make egui compatible with screen readers. NOTE: adds a lot of dependencies.
+	# ^^ Removed for simplication. Just uncomment if you want to have screen reader support
+	"default_fonts", # Embed the default egui fonts.
+	"glow",          # Use the glow rendering backend. Alternative: "wgpu".
+	# "persistence",   # Enable restoring app state when restarting the app.
+	# ^^ Removed for simplication. Just uncomment if you want persistence
+	"wayland",       # To support Linux (and CI)
+	"x11",           # To support older Linux distributions (restores one of the default features)
 ] }
 
 log = "0.4.27"
@@ -29,6 +31,7 @@ serde = { version = "1.0.219", features = ["derive"] }
 [profile.release]
 opt-level = 3
 
+# Optimize all dependencies even in debug builds:
 [profile.dev.package."*"]
 opt-level = 2
 
