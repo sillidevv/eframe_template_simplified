@@ -27,8 +27,6 @@ This template mainly focuses on removing the wasm / web compilation stuff but al
 - **Github workflows related to wasm and Github Pages**: Removed [`.github/workflows/pages.yml`](https://github.com/emilk/eframe_template/blob/main/.github/workflows/pages.yml) and removed all the wasm workflows from [`.github/workflows/rust.yml`](https://github.com/emilk/eframe_template/blob/main/.github/workflows/rust.yml)
 - **The [`rust-toolchain`](https://github.com/emilk/eframe_template/blob/main/rust-toolchain) file:** I'm pretty sure it's not required for this
 
-*Note: The file paths here are clickable links that link to the original files in the original repo*
-
 Pretty sure that's it, but I might have forgotten to document something I removed.
 
 ---
